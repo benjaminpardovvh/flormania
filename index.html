@@ -2,23 +2,102 @@
 <html lang="es">
 
 <head>
-    <meta name="author" content="Benjamin Pardo">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="static/img/logo.png" type="image/x-icon">
-    <title>Flormania</title>
-    <link rel="stylesheet" href="static/css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="FlorManía">
+  <title>FlorManía</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/script.js" defer></script>
 </head>
-
 <body>
-    <header class="header">
-        
-    </header>
-    <!--pie de pagina-->
-    <footer class="footer">
-        <p>Todos los derechos reservados Libroteca @2026.</p>
-    </footer>
-    <script src="static/js/script.js"></script>
+  <header class="encabezado">
+    <a class="logo" href="#" aria-label="FlorManía, inicio"><span>Flor</span>Manía</a>
+    <nav class="enlaces-principales">
+      <a class="enlace-envia" id="enlaceEnvio" href="#catalogo">Envía Flores</a>
+      <a href="#nosotros">Nosotros</a>
+      <button id="iniciarSesion" type="button">Iniciar Sesión</button>
+    </nav>
+  </header>
+  <nav class="categorias" aria-label="Categorías de flores">
+    <a href="#catalogo" data-categoria="Girasoles">Girasoles</a>
+    <a href="#catalogo" data-categoria="Rosas">Rosas</a>
+    <a href="#catalogo" data-categoria="Claveles">Claveles</a>
+    <a href="#catalogo" data-categoria="Orquídeas">Orquídeas</a>
+    <a href="#catalogo" data-categoria="Margaritas">Margaritas</a>
+  </nav>
+  <main>
+    <section class="destacada">
+      <h1>Flor del Mes</h1>
+      <img class="imagen-destacada" src="static/img/flor-del-mes.jpg" alt="Arreglo de flores de distintos colores">
+    </section>
+    <section class="catalogo" id="catalogo">
+      <div class="barra-resultados">
+        <p id="contadorResultados">Mostrando 5 resultados</p>
+        <button id="verMas" class="enlace-texto" type="button">Ver más Flores</button>
+      </div>
+      <div class="productos" id="productos">
+        <article class="producto" data-categoria="Rosas">
+          <img src="static/img/ramo-de-rosas.jpg" alt="Ramo de rosas" class="foto-producto"
+            onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1548586196-aa5803b77379?auto=format&fit=crop&w=500&q=80'">
+          <div class="detalles-producto">
+            <div>
+              <p class="nombre-producto">Ramo de Rosas</p>
+              <p class="precio">$40.00</p>
+            </div>
+            <button class="comprar" type="button">Comprar</button>
+          </div>
+        </article>
+        <article class="producto" data-categoria="Claveles">
+          <img src="static/img/arreglo-tulipanes.jpg" alt="Arreglo de tulipanes" class="foto-producto">
+          <div class="detalles-producto">
+            <div>
+              <p class="nombre-producto">Arreglo Tulipanes</p>
+              <p class="precio">$50.00</p>
+            </div>
+            <button class="comprar" type="button">Comprar</button>
+          </div>
+        </article>
+        <article class="producto" data-categoria="Margaritas">
+          <img src="static/img/bouquet-lirios.jpg" alt="Bouquet de lirios" class="foto-producto">
+          <div class="detalles-producto">
+            <div>
+              <p class="nombre-producto">Bouquet Lirios</p>
+              <p class="precio">$25.00</p>
+            </div>
+            <button class="comprar" type="button">Comprar</button>
+          </div>
+        </article>
+        <article class="producto adicional" data-categoria="Girasoles" hidden>
+          <img src="https://images.unsplash.com/photo-1597848212624-e6d2b5c2f8a4?auto=format&fit=crop&w=500&q=80"
+            alt="Ramo de girasoles" class="foto-producto">
+          <div class="detalles-producto">
+            <div>
+              <p class="nombre-producto">Ramo de Girasoles</p>
+              <p class="precio">$35.00</p>
+            </div>
+            <button class="comprar" type="button">Comprar</button>
+          </div>
+        </article>
+        <article class="producto adicional" data-categoria="Orquídeas" hidden>
+          <img src="https://images.unsplash.com/photo-1566907225472-4b3f3f8c6f4b?auto=format&fit=crop&w=500&q=80"
+            alt="Orquídea elegante" class="foto-producto">
+          <div class="detalles-producto">
+            <div>
+              <p class="nombre-producto">Orquídea Elegante</p>
+              <p class="precio">$45.00</p>
+            </div>
+            <button class="comprar" type="button">Comprar</button>
+          </div>
+        </article>
+      </div>
+      <p id="sinResultados" hidden>No hay flores en esta categoría.</p>
+    </section>
+    <section class="nosotros" id="nosotros">
+      <h2>Nosotros</h2>
+      <p>En FlorManía queremos ayudarte a regalar flores para cada ocasión especial.</p>
+    </section>
+  </main>
+  <footer>© <span id="anio"></span> FlorManía</footer>
 </body>
 
 </html>

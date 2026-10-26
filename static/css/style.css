@@ -1,0 +1,227 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --rosa: #d79ab8;
+  --rosa-claro: #f4e7ed;
+  --gris: #eeeeee;
+  --texto: #171717;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--texto);
+  background: white;
+}
+
+.encabezado {
+  min-height: 64px;
+  padding: 8px 4%;
+  background: var(--rosa);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+
+.logo {
+  font-size: 29px;
+  font-weight: bold;
+  color: #111;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.logo span { color: white; }
+
+.enlaces-principales {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.enlaces-principales a {
+  color: #111;
+  text-decoration: none;
+  font-size: 15px;
+}
+
+.enlaces-principales a:hover {
+  text-decoration: underline;
+}
+
+.enlace-envia {
+  transition: color .2s ease;
+}
+
+/* Al pasar el cursor, "Envía Flores" cambia a "Envía Bouquets". */
+.enlace-envia:hover {
+  color: #fff;
+}
+
+#iniciarSesion {
+  background: white;
+  border: 1px solid #555;
+  border-radius: 3px;
+  padding: 5px 8px;
+  font-size: 11px;
+  cursor: pointer;
+}
+
+#iniciarSesion:hover { background: var(--rosa-claro); }
+
+.categorias {
+  background: #e8e6e7;
+  min-height: 28px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: clamp(14px, 3vw, 32px);
+  padding: 6px 12px;
+  flex-wrap: wrap;
+}
+
+.categorias a {
+  color: #222;
+  font-size: 12px;
+  text-decoration: none;
+}
+
+.categorias a:hover,
+.categorias a.activa {
+  text-decoration: underline;
+  color: #a6386c;
+}
+
+.destacada h1 {
+  text-align: center;
+  font-size: 24px;
+  margin: 5px 0 2px;
+}
+
+.imagen-destacada {
+  display: block;
+  width: min(72%, 660px);
+  height: 190px;
+  margin: 0 auto;
+  object-fit: cover;
+  border: 1px solid #555;
+}
+
+.catalogo {
+  width: min(86%, 900px);
+  margin: 12px auto 30px;
+}
+
+.barra-resultados {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 9px;
+  font-size: 10px;
+}
+
+.enlace-texto {
+  border: 0;
+  background: transparent;
+  color: #174b92;
+  text-decoration: underline;
+  font-size: 11px;
+  cursor: pointer;
+}
+
+.productos {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.producto {
+  min-width: 0;
+  background: #efedef;
+  padding: 8px;
+}
+
+.foto-producto {
+  width: 100%;
+  height: 105px;
+  display: block;
+  object-fit: cover;
+  background: white;
+  border: 1px solid #bbb;
+}
+
+.detalles-producto {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 5px;
+  padding-top: 5px;
+}
+
+.nombre-producto {
+  font-size: 10px;
+  font-style: italic;
+}
+
+.precio {
+  color: #a2255d;
+  font-size: 10px;
+  margin-top: 2px;
+}
+
+.comprar {
+  background: var(--rosa);
+  color: #111;
+  border: 1px solid #222;
+  padding: 4px 9px;
+  font-size: 10px;
+  cursor: pointer;
+  box-shadow: 1px 1px 0 #333;
+}
+
+.comprar:hover { background: #e9b9d0; }
+
+.nosotros {
+  text-align: center;
+  padding: 22px 16px 30px;
+}
+
+.nosotros h2 { margin-bottom: 8px; }
+.nosotros p { font-size: 14px; }
+
+footer {
+  border-top: 5px solid var(--rosa);
+  padding: 12px;
+  text-align: center;
+  font-size: 12px;
+}
+
+[hidden] { display: none !important; }
+
+@media (max-width: 620px) {
+  .encabezado {
+    flex-direction: column;
+    padding: 10px;
+  }
+  .enlaces-principales {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .categorias { gap: 10px 18px; }
+  .imagen-destacada {
+    width: 90%;
+    height: 160px;
+  }
+  .catalogo { width: 92%; }
+  .productos { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .foto-producto { height: 120px; }
+}
+
+@media (max-width: 380px) {
+  .productos { grid-template-columns: 1fr; }
+  .foto-producto { height: 170px; }
+}
